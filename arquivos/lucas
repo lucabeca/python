@@ -1,0 +1,9 @@
+from time import sleep
+print(4+4)
+print(4*4)
+print(4**4)
+print(10/3)
+print(10//3)
+print(10%3)
+fila = ['Matheus', 'Abner', 'Ebdiel', 'Lucas', 'Vitor']
+len(fila)
