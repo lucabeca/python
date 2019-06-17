@@ -103,6 +103,9 @@ def salario(valor_hora, horas_mensais):
 
 
 def tinta(metros_pintar):
+    import math
+    qnt = metros_pintar / (18 * 3)
+    return math.ceil(qnt)
     """ Recebe quantos metros quadrados precisa pintar,
     e retorna a quantidade de latas de tinta a comprar.
     A cobertura da tinta é de 3 metros por litro de tinta
@@ -110,6 +113,9 @@ def tinta(metros_pintar):
 
 
 def duzias(ovos):
+    import math
+    duzias = ovos / 12
+    return math.ceil(duzias)
     ''' Receba o número de ovos e devolva a quantidade de dúzias
     correspondente. Considere sempre dúzias cheias, arredondando pra
     cima se necessário.
@@ -117,6 +123,11 @@ def duzias(ovos):
 
 
 def decompor_numero(numero):
+    cen = numero // 100
+    numero %= 100
+    dez = numero // 10
+    unid = numero % 10
+    return cen, dez, unid
     '''
     Leia um número inteiro menor que 1000 e devolva a quantidade de
     centenas, dezenas e unidades do mesmo.
@@ -125,31 +136,68 @@ def decompor_numero(numero):
 
 
 def palindrome(texto):
+    texto.upper()[::-1]
+    texto.lower()[::-1]
+    texto.capitalize()[::-1]
+    return texto == texto
     """Faça uma função que verifique se uma textro passado é palíndrome,
     isto é, se é igual quando lido de trás pra frente."""
 
 
 def troca_caixa(texto):
+    texto = texto.lower()
+    texto = texto.replace("a", "A")
+    texto = texto.replace("e", "E")
+    texto = texto.replace("i", "I")
+    texto = texto.replace("o", "O")
+    texto = texto.replace("u", "U")
+    return texto
     """Vogais ficam em caixa alta (maiúsculas)
     Consoantes ficam em caixa baixa (minúsculas)"""
 
 
 def imprime_mes_por_extenso(data):
+    meses = {
+        1: "janeiro",
+        2: "fevereiro",
+        3: "março",
+        4: "abril",
+        5: "maio",
+        6: "junho",
+        7: "julho",
+        8: "agosto",
+        9: "setembro",
+        10: "outubro",
+        11: "novembro",
+        12: "dezembro",
+    }
+    dia = data.split('/')[0]
+    mes = data.split('/')[1]
+    ano = data.split('/')[2]
+    data_impr = ("{} de {} de {}".format(dia, meses[int(mes)], ano))
+    return data_impr
     """Faça um programa que solicite a data de nascimento (dd/mm/aaaa)
     e imprima com o nome do mês por extenso
     """
 
 
 def encontra_caracter(texto, caracter_procurado):
+    caracter = texto.find(caracter_procurado, 1)
+    return caracter
     """Receba um texto e retorne a localização da primeira vez que
     aparece o caracter especificado"""
 
 
 def é_azarado(numero):
+    if numero[-1] == numero[0]:
+        return True
+    else:
+        return False
     """O último dígito não pode ser igual ao primeiro, porque isso dá azar."""
 
 
 def ondernamento_contrario(lista):
+    return lista[::-1]
     """ Devolve a lista invertida"""
 
 
