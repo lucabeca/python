@@ -11,11 +11,11 @@ def verificar(num):
 print('Calculadora de funções quadráticas')
 print('by Lucas')
 
-a = float(input('\nA: '))
+a = eval(input('\nA: '))
 verificar(a)
-b = float(input('B: '))
+b = eval(input('B: '))
 verificar(b)
-c = float(input('C: '))
+c = eval(input('C: '))
 verificar(c)
 
 delta = (b ** 2) - (4 * a * c)
@@ -53,3 +53,4 @@ else:
     print("\n({}, {}) | ({}, 0) | ({}, 0)".format(vx, vy, x1, x2))
 
 print("\nObrigado por usar :)")
+print("créditos ao Jorge pela ajuda :)")
