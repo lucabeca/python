@@ -68,6 +68,17 @@ def baskara(a, b, c):
     - Se o delta for positivo, a equação possui duas raiz reais.
     Devolva uma tupla com dois elementos.
     '''
+    delta = (b ** 2) - (4 * a * c)
+    if a == 0:
+        return (-c/b,)
+    else:
+        x1 = (-b + (delta ** 0.5)) / (2 * a)
+        x2 = (-b - (delta ** 0.5)) / (2 * a)
+        if delta < 0:
+            return ()
+        elif delta == 0:
+            return (x1,)
+        return (x1, x2)
 
 
 def acrescimo_nota_bb(nota_sozinho, nota_com_ajuda):
@@ -75,6 +86,7 @@ def acrescimo_nota_bb(nota_sozinho, nota_com_ajuda):
     depois que o big brother ajudou, e retorna o acrecimo que o big
      brother recebera em sua nota pela ajuda.
      O acréscimo é de 1/4 da diferença das notas, se for positivo'''
+
 
 
 # Área de testes: só mexa aqui se souber o que está fazendo!
