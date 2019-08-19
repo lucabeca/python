@@ -5,7 +5,6 @@ def testa_lados(a, b, c):
     ''' Receba os três lados de um triângulo. Informe se os valores
     podem ser um triângulo. Indique, caso os lados formem um triângulo,
     se o mesmo é: equilátero, isósceles ou escaleno. '''
-
     if (b + c) < a or (a + c) < b or (a + b) < c:
         return "Não forma um triângulo"
     elif (a == b) and (b == c):
@@ -18,7 +17,7 @@ def testa_lados(a, b, c):
 
 def ano_bissexto(ano):
     ''' Determine se um ano é bissexto'''
-    if (ano % 4 == 0 and ano % 100 != 0) or ano % 400 == 0:
+    if (ano % 4 == 0 and ano % 100 != 0) or ano % 400 == 0:   
         return True
     else:
         return False
@@ -32,11 +31,11 @@ def data_valida(data):
         if mes in (4, 5, 6, 9, 11) and dia > 30:
             return False
         elif mes == 2 and dia == 29:
-            if ano_bissexto(ano):
-                return True
-            return False
+            return ano_bissexto(ano)
         return True
     return False
+
+
 def maior3(a, b, c):
     ''' Recebe tres valores, e retorna o maior dos tres'''
     if a > b and a > c:
